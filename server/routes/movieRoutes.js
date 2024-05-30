@@ -18,4 +18,21 @@ router.post('/add', async (req, res) => {
     }
 })
 
+router.get('/getAllMovies', async(req, res) => {
+    try {
+        const movies = await Movie.find()
+        res.send({
+            success: true,
+            message: 'movies fetched sucessfully',
+            data: movies
+        })
+    } catch (error) {
+        res.send({
+            success: false,
+            message: 'Something went wrong',
+            data: error
+        })
+    }
+})
+
 exports.router = router

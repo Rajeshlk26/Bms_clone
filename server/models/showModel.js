@@ -22,6 +22,10 @@ const showSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    totalSeats : {
+        type: Number,
+        required: true
+    },
     bookedSeats: {
         type: Array,
         default: []
